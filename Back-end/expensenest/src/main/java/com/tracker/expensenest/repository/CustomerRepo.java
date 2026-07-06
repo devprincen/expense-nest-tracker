@@ -1,0 +1,11 @@
+package com.tracker.expensenest.repository;
+
+import java.util.UUID;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.tracker.expensenest.model.Customer;
+
+public interface CustomerRepo extends JpaRepository<Customer, UUID> {
+
+}
