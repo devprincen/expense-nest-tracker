@@ -10,40 +10,35 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Builder
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "customers")
-public class Customer {
-    
+public class Category {
+
     @Id
     @UuidGenerator
     @GeneratedValue(strategy = GenerationType.UUID)
 
     private UUID id;
-    private String first_name;
-    private String last_name;
-    private String email;
-    private String password;
-    private double budget;
-    private double income;
+    private UUID customer_id;
+    private String category_name;
+    private String category_description;
 
     @Enumerated(EnumType.STRING)
-    private Status Status;
+    private Category_type Category_type;
 
-    public enum Status {
-        ACTIVE,
-        DEACTIVATE
+    public enum Category_type {
+        INCOME,
+        EXPENSE
     }
 
 
-
+    
 }

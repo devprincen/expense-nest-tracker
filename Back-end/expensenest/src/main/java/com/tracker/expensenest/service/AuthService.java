@@ -27,8 +27,8 @@ public class AuthService {
             throw new RuntimeException("Email already exist: ");
         }
             Customer customer = Customer.builder()
-            .firstName(request.getFirstName())
-            .lastName(request.getLastName())
+            .first_name(request.getFirst_name())
+            .last_name(request.getLast_name())
             .email(request.getEmail())
             .password(passwordEncoder.encode(request.getPassword())).build();
 
