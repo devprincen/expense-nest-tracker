@@ -10,7 +10,7 @@
 		<!--  lookup parent from repository  -->
 	</parent>
 	<groupId>com.tracker</groupId>
-	<artifactId>expensenest</artifactId>
+	<artifactId>expensesnest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name />
 	<description />

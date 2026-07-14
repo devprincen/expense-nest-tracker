@@ -23,12 +23,12 @@ public class AuthService {
 
     public String register(RegisterRequest request){
 
-        if (customerRepo.findByEmail(request.getPassword()).isPresent()) {
+        if (customerRepo.findByEmail(request.getEmail()).isPresent()) {
             throw new RuntimeException("Email already exist: ");
         }
             Customer customer = Customer.builder()
-            .first_name(request.getFirst_name())
-            .last_name(request.getLast_name())
+            .firstName(request.getFirstName())
+            .lastName(request.getLastName())
             .email(request.getEmail())
             .password(passwordEncoder.encode(request.getPassword())).build();
 

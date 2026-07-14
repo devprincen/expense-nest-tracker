@@ -30,9 +30,9 @@ public class CategoryService {
         
         Category oldCategory = categoryRepo.findById(id).orElseThrow();
 
-        oldCategory.setCategory_name(category.getCategory_name());
-        oldCategory.setCategory_description(category.getCategory_description());
-        oldCategory.setCategory_type(category.getCategory_type());
+        oldCategory.setCategoryName(category.getCategoryName());
+        oldCategory.setCategoryDescription(category.getCategoryDescription());
+        oldCategory.setCategoryType(category.getCategoryType());
 
         return categoryRepo.save(oldCategory);
         

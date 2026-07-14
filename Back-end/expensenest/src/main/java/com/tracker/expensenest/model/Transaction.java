@@ -1,5 +1,6 @@
 package com.tracker.expensenest.model;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 import org.hibernate.annotations.UuidGenerator;
@@ -20,7 +21,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Category {
+public class Transaction {
 
     @Id
     @UuidGenerator
@@ -28,17 +29,16 @@ public class Category {
 
     private UUID id;
     private UUID customerId;
-    private String categoryName;
-    private String categoryDescription;
-
-    @Enumerated(EnumType.STRING)
-    private CategoryType categoryType;
-
-    public enum CategoryType {
-        INCOME,
-        EXPENSE
-    }
-
-
+    private UUID categoryId;
+    private double amount;
+    private String comment;
+    private LocalDateTime date;
     
+    @Enumerated(EnumType.STRING)
+    private TransactionType transactionType;
+
+    public enum TransactionType {
+        CREDIT,
+        DEBIT
+    }
 }

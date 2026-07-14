@@ -29,21 +29,19 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.UUID)
 
     private UUID id;
-    private String first_name;
-    private String last_name;
+    private String firstName;
+    private String lastName;
     private String email;
     private String password;
     private double budget;
     private double income;
 
     @Enumerated(EnumType.STRING)
-    private Status Status;
+    private Status status;
 
     public enum Status {
         ACTIVE,
         DEACTIVATE
     }
-
-
 
 }
